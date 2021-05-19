@@ -22,6 +22,9 @@ public:
             
         }
     }
+    void initialize(string input){
+        
+    }
 };
 
 #endif
