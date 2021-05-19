@@ -46,20 +46,21 @@ int main(){
     band1.close();
     band2.close();
     band3.close();
+    ofstream BIL("bil.txt");
     //BIL
     for(int i=0;i<b1.size();i++){
         for(int j=0;j<3;j++){
-            cout<<b1[i][j]<<"\t";
+            BIL<<b1[i][j]<<"\t";
         }
-        cout<<endl;
+        BIL<<endl;
         for(int j=0;j<3;j++){
-            cout<<b2[i][j]<<"\t";
+            BIL<<b2[i][j]<<"\t";
         }
-        cout<<endl;
+        BIL<<endl;
         for(int j=0;j<3;j++){
-            cout<<b3[i][j]<<"\t";
+            BIL<<b3[i][j]<<"\t";
         }
-        cout<<endl;
+        BIL<<endl;
     }
     return 0;
 }
