@@ -10,8 +10,8 @@ using namespace std;
 class Band{
 private:
     vector<vector<int>> data;
-    int col=2147483647;
-    int row=2147483647;
+    int col=0;
+    int row=0;
 public:
 /*Input data must be like "12 34 56 78"*/
     void importDataFromString(string import){
@@ -31,6 +31,12 @@ public:
         cout<<"********Info********"<<endl;
         cout<<"Row:\t"<<row<<endl;
         cout<<"Col:\t"<<col<<endl;
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                cout<<data[i][j]<<"\t";
+            }
+            cout<<endl;
+        }
     }
     string getLineData(int n){
         if(n>=row)return "Require out of bound.";

@@ -62,5 +62,6 @@ int main(){
         }
         BIL<<endl;
     }
+    BIL.close();
     return 0;
 }
