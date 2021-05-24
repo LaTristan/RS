@@ -1,7 +1,53 @@
 #include <iostream>
 #include <uchar.h>
+#include <vector>
+#include <fstream>
+#include <sstream>
+#include <map>
 
 using namespace std;
+
+class Graph{
+    private:
+    vector<vector<int>> data;
+    int row;
+    int col;
+    map<int,int>hashmap;
+    public:
+    /*Graph(int r,int c){
+        this->row=r;
+        this->col=c;
+    }*/
+    void readFile(ifstream ifs){
+        string s;
+        while(getline(ifs,s)){
+            istringstream iss(s);
+            int tmp;
+            vector<int>t;
+            while(iss>>tmp){
+                t.push_back(tmp);
+            }
+            data.push_back(t);
+            t.clear();
+        }
+        row=data.size();
+        col=data[0].size();
+    }
+    void CalcHash(){
+        pair<int,int>t;
+        for(int i=0;i<data.size();i++){
+            for(int j=0;j<data[0].size();j++){
+                if(hashmap.find(data[i][j])!=hashmap.end()){
+                    hashmap[data[i][j]]++;
+                }else{
+                    t.first=data[i][j];
+                    t.second=1;
+                    hashmap.insert(t);
+                }
+            }
+        }
+    }
+};
 
 int gray[256] = { 0 };
 double gray_prob[256] = { 0 };
