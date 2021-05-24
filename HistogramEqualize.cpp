@@ -47,6 +47,9 @@ class Graph{
             }
         }
     }
+    map<int,int> getHash(){
+        return hashmap;
+    }
 };
 
 int gray[256] = { 0 };
